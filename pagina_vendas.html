@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imersão Societária: Do MEI à LTDA sem medo da JUCESP</title>
+<style>
+  :root{
+    --vinho:#6B1F2A; --vinho-esc:#4A151C; --bege:#E8DCC4; --bege-claro:#F7F2E7;
+    --preto:#1A1A1A; --cinza:#5A5A5A; --branco:#FFFFFF;
+  }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --branco:#1A1A1A; --preto:#F0E9DC; --bege-claro:#241514; --cinza:#C9BFB2; } }
+  :root[data-theme="dark"]{ --branco:#1A1A1A; --preto:#F0E9DC; --bege-claro:#241514; --cinza:#C9BFB2; }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:Calibri,Arial,sans-serif;background:var(--branco);color:var(--preto);}
+  h1,h2,h3{font-family:Cambria,Georgia,serif;margin:0;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  header.hero{background:linear-gradient(160deg,var(--vinho-esc),var(--vinho));color:#fff;padding:70px 0 90px;text-align:center;}
+  .kicker{letter-spacing:3px;font-size:13px;font-weight:bold;color:var(--bege);text-transform:uppercase;}
+  header.hero h1{font-size:44px;margin:18px 0 10px;line-height:1.15;}
+  header.hero .sub{font-family:Cambria,Georgia,serif;font-style:italic;font-size:22px;color:var(--bege);margin-bottom:18px;}
+  header.hero p{max-width:640px;margin:0 auto 30px;color:#e6dccf;font-size:15px;line-height:1.6;}
+  .cta-btn{display:inline-block;background:#fff;color:var(--vinho-esc);font-weight:bold;padding:16px 38px;border-radius:30px;text-decoration:none;font-size:15px;letter-spacing:1px;box-shadow:0 8px 24px rgba(0,0,0,.25);}
+  .cta-btn.secondary{background:var(--vinho-esc);color:#fff;border:1.5px solid var(--bege);}
+  section{padding:60px 0;}
+  .section-title{font-size:30px;color:var(--vinho);text-align:center;margin-bottom:10px;}
+  .section-sub{text-align:center;color:var(--cinza);max-width:600px;margin:0 auto 40px;font-size:15px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  @media(max-width:800px){.grid3{grid-template-columns:1fr;} .grid2{grid-template-columns:1fr;}}
+  .card{background:var(--bege-claro);border:1px solid #d9c7a3;border-radius:10px;padding:26px;}
+  .card h3{font-size:17px;color:var(--preto);margin-bottom:10px;}
+  .card p{font-size:13.5px;color:var(--cinza);line-height:1.6;margin:0;}
+  .num-circle{width:38px;height:38px;border-radius:50%;background:var(--vinho);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-bottom:14px;}
+  .module-row{display:flex;gap:20px;align-items:flex-start;padding:22px 0;border-bottom:1px solid #e6ddc9;}
+  .module-row .tag{background:var(--vinho);color:#fff;font-size:12px;font-weight:bold;padding:6px 14px;border-radius:20px;white-space:nowrap;}
+  .module-row h4{font-size:17px;margin-bottom:6px;}
+  .module-row p{font-size:13.5px;color:var(--cinza);margin:0;line-height:1.55;}
+  .dark-section{background:var(--vinho-esc);color:#fff;}
+  .dark-section .section-title{color:#fff;}
+  .dark-section .section-sub{color:#d9c9b8;}
+  ul.check-list{list-style:none;padding:0;margin:0;}
+  ul.check-list li{padding:10px 0 10px 34px;position:relative;font-size:14.5px;border-bottom:1px solid rgba(255,255,255,.12);}
+  ul.check-list li:before{content:"✓";position:absolute;left:0;top:10px;color:var(--bege);font-weight:bold;font-size:17px;}
+  .price-box{background:var(--branco);color:var(--preto);border-radius:14px;padding:40px;text-align:center;max-width:480px;margin:40px auto 0;box-shadow:0 20px 50px rgba(0,0,0,.35);}
+  .price-box .old{color:var(--cinza);text-decoration:line-through;font-size:16px;}
+  .price-box .new{font-size:46px;color:var(--vinho);font-weight:bold;font-family:Cambria,Georgia,serif;}
+  .price-box .cond{color:var(--cinza);font-size:12.5px;margin-bottom:22px;}
+  footer{padding:36px 0;text-align:center;color:var(--cinza);font-size:12px;}
+  .badge-row{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:26px;}
+  .badge-row div{font-size:12px;color:#e6dccf;}
+  .faq details{border-bottom:1px solid #e6ddc9;padding:16px 0;}
+  .faq summary{font-weight:bold;cursor:pointer;font-size:15px;color:var(--preto);}
+  .faq p{color:var(--cinza);font-size:13.5px;margin:10px 0 0;line-height:1.6;}
+
+  /* ---- Efeitos de entrada ---- */
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+    .reveal.is-visible{opacity:1;transform:translateY(0);}
+    .reveal-stagger.is-visible > *{opacity:0;transform:translateY(18px);animation:revealUp .6s ease forwards;}
+    .reveal-stagger.is-visible > *:nth-child(1){animation-delay:.05s;}
+    .reveal-stagger.is-visible > *:nth-child(2){animation-delay:.15s;}
+    .reveal-stagger.is-visible > *:nth-child(3){animation-delay:.25s;}
+    .reveal-stagger.is-visible > *:nth-child(4){animation-delay:.35s;}
+    .reveal-stagger.is-visible > *:nth-child(5){animation-delay:.45s;}
+    .reveal-stagger.is-visible > *:nth-child(6){animation-delay:.55s;}
+    .reveal-stagger.is-visible > *:nth-child(7){animation-delay:.65s;}
+    .reveal-stagger.is-visible > *:nth-child(8){animation-delay:.75s;}
+    .reveal-stagger.is-visible > *:nth-child(9){animation-delay:.85s;}
+    @keyframes revealUp{to{opacity:1;transform:translateY(0);}}
+
+    header.hero .kicker{opacity:0;animation:heroIn .7s ease forwards .1s;}
+    header.hero h1{opacity:0;animation:heroIn .8s ease forwards .25s;}
+    header.hero .sub{opacity:0;animation:heroIn .8s ease forwards .4s;}
+    header.hero p{opacity:0;animation:heroIn .8s ease forwards .55s;}
+    header.hero .cta-btn{opacity:0;animation:heroIn .8s ease forwards .7s;}
+    @keyframes heroIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+    .cta-btn{transition:transform .25s ease, box-shadow .25s ease;}
+    .cta-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 28px rgba(0,0,0,.3);}
+    .card{transition:transform .3s ease, box-shadow .3s ease;}
+    .card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.12);}
+    .price-box{transition:transform .3s ease;}
+    .price-box:hover{transform:translateY(-4px);}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">GSOLUTION · CONSULTORIA CONTÁBIL E SOCIETÁRIA</div>
+    <h1>Imersão Societária</h1>
+    <div class="sub">Do MEI à LTDA sem medo da JUCESP</div>
+    <p>O passo a passo prático para contadores que querem dominar abertura, alteração e transformação de empresas: com casos reais, checklists e modelos editáveis.</p>
+    <a href="https://pay.kiwify.com.br/4rraoVv" class="cta-btn">QUERO GARANTIR MINHA VAGA</a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-title reveal">Se você já perdeu horas com uma exigência da JUCESP...</div>
+    <p class="section-sub reveal">...ou fica insegura na hora de montar um contrato social, essa imersão foi feita para você.</p>
+    <div class="grid3 reveal-stagger">
+      <div class="card"><div class="num-circle">1</div><h3>Processos voltam da Junta</h3><p>E você não sabe exatamente qual detalhe causou a exigência: nem como evitar da próxima vez.</p></div>
+      <div class="card"><div class="num-circle">2</div><h3>Insegurança na hora do contrato</h3><p>Copiar modelo pronto sem entender por que cada cláusula existe gera erro repetido de cliente para cliente.</p></div>
+      <div class="card"><div class="num-circle">3</div><h3>Serviço societário mal cobrado</h3><p>O trabalho mais técnico do escritório vira "documento incluso", sem o valor que merece.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="wrap">
+    <div class="section-title reveal">3 módulos, 2 dias, conteúdo 100% prático</div>
+    <p class="section-sub reveal">Baseado em processos reais já resolvidos: o formato "aprendi no balcão".</p>
+    <div class="reveal-stagger">
+    <div class="module-row">
+      <span class="tag">MÓDULO 1</span>
+      <div><h4>Diagnóstico e Estrutura</h4><p>Os erros que fazem a JUCESP devolver processos e como escolher a estrutura certa entre MEI, EI, SLU e LTDA.</p></div>
+    </div>
+    <div class="module-row">
+      <span class="tag">MÓDULO 2</span>
+      <div><h4>Transformação na Prática: o módulo de ouro</h4><p>MEI → LTDA, entrada de sócio, troca de administrador, endereço e capital social, com estudos de caso reais.</p></div>
+    </div>
+    <div class="module-row" style="border-bottom:none;">
+      <span class="tag">MÓDULO 3</span>
+      <div><h4>Contratos e Precificação</h4><p>A lógica de cada cláusula do contrato social: e como cobrar pelo que você já sabe fazer.</p></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-title reveal">Tudo o que você leva desta imersão</div>
+    <p class="section-sub reveal">Material de nível pós-graduação, pronto para consulta permanente no seu escritório.</p>
+    <div class="grid3 reveal-stagger">
+      <div class="card"><h3>📘 Apostila completa</h3><p>Com espaço para anotações, roteiro de fala e os 3 módulos aprofundados.</p></div>
+      <div class="card"><h3>🎯 Estudos de caso reais</h3><p>MEI → LTDA, entrada de sócio, troca de administrador, exigências da JUCESP e mais.</p></div>
+      <div class="card"><h3>🔀 Fluxogramas VRE + DBE + Redesim</h3><p>O passo a passo visual de abertura e transformação de empresas.</p></div>
+      <div class="card"><h3>✅ Checklists profissionais</h3><p>Para abertura, transformação e revisão de alteração contratual.</p></div>
+      <div class="card"><h3>📄 Modelos editáveis de contrato</h3><p>Contrato social e alteração contratual prontos para adaptar.</p></div>
+      <div class="card"><h3>💰 Planilha de honorários</h3><p>Referência de precificação por tipo de serviço societário.</p></div>
+      <div class="card"><h3>🎓 Certificado de participação</h3><p>Emitido ao final da imersão, com sua carga horária.</p></div>
+      <div class="card"><h3>🖥️ Slides de apoio por módulo</h3><p>Um arquivo para cada um dos 3 módulos, conduzindo a aula com clareza.</p></div>
+      <div class="card"><h3>👥 Turno de perguntas</h3><p>Espaço para tirar dúvidas dos seus próprios casos reais.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section" id="inscricao">
+  <div class="wrap">
+    <div class="section-title reveal">Garanta sua vaga na próxima turma</div>
+    <p class="section-sub reveal">Vagas limitadas para manter a qualidade do acompanhamento durante a imersão.</p>
+    <div class="price-box reveal">
+      <div class="new">R$ 127</div>
+      <div class="cond">à vista ou em até 6x no cartão: turma de lançamento</div>
+      <a href="https://pay.kiwify.com.br/4rraoVv" class="cta-btn" style="width:100%;">QUERO ME INSCREVER AGORA</a>
+    </div>
+    <div class="badge-row">
+      <div>🔒 Compra 100% segura</div>
+      <div>🎥 Aulas gravadas</div>
+      <div>📜 Certificado incluso</div>
+      <div>📦 Todos os materiais inclusos</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-title reveal">Perguntas frequentes</div>
+    <div class="faq reveal" style="max-width:720px;margin:0 auto;">
+      <details><summary>Para quem é essa imersão?</summary><p>Para contadores e profissionais de escritórios contábeis que atendem ou querem passar a atender processos societários: abertura, alteração e transformação de empresas.</p></details>
+      <details><summary>A imersão é presencial ou online?</summary><p>Informe a modalidade da sua turma na descrição do produto na Kiwify: este material serve para ambos os formatos.</p></details>
+      <details><summary>Se eu não conseguir assistir ao vivo?</summary><p>Sem problema. As aulas ficam gravadas e disponíveis na plataforma, então você assiste no seu tempo, quantas vezes quiser.</p></details>
+      <details><summary>Recebo certificado?</summary><p>Sim, certificado de participação com carga horária, emitido ao final dos dois dias.</p></details>
+      <details><summary>Os modelos de contrato substituem um advogado?</summary><p>Não. São pontos de partida estruturais; casos de maior complexidade societária devem contar com apoio jurídico especializado.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">GSolution · Consultoria Contábil e Societária: Imersão Societária © 2026</div>
+</footer>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal, .reveal-stagger');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(el){ el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+</body>
+</html>
